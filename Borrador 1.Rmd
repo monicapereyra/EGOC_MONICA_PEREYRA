@@ -1,0 +1,205 @@
+---
+title: "Obra Santa Maria"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+```
+
+Avances
+===================================== 
+
+
+```{r}
+# Cargar la librería ggplot2
+library(ggplot2)
+library(dplyr) # Necesario para la función mutate
+
+# --- 1. Preparación de los datos ---
+# Meses de enero a diciembre
+meses <- factor(
+  c("Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"),
+  levels = c("Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic")
+)
+
+# Avance Teórico: 100% / 12 meses
+avance_teorico <- rep(100 / 12, 12)
+
+# Avance Real (los valores que proporcionaste)
+avance_real <- c(6, 5, 7, 8, 6, 6, 7, 5, 6, 0, 0, 0)
+
+# Crear un dataframe
+datos_avance <- data.frame(
+  Mes = meses,
+  Teorico = avance_teorico,
+  Real = avance_real
+)
+
+# Transformar los datos a formato "largo" (tidy) para ggplot
+datos_largo <- datos_avance %>%
+  tidyr::pivot_longer(
+    cols = c(Teorico, Real),
+    names_to = "Tipo_Avance",
+    values_to = "Porcentaje"
+  )
+
+# --- 2. Creación del Gráfico ---
+grafico_avance <- ggplot(datos_largo, aes(x = Mes, y = Porcentaje, fill = Tipo_Avance)) +
+  
+  # Geometría de Barras: position = "dodge" para barras agrupadas
+  geom_bar(stat = "identity", position = "dodge", width = 0.7) +
+  
+  # Etiquetas de valor en las barras
+  geom_text(
+    aes(label = paste0(round(Porcentaje, 1), "%")),
+    position = position_dodge(width = 0.7), # Alinear con las barras
+    vjust = -0.5, # Colocar encima de la barra
+    size = 3.5
+  ) +
+  
+  # Escalas y Títulos
+  scale_y_continuous(
+    name = "Porcentaje de Avance (%)",
+    limits = c(0, max(datos_largo$Porcentaje) + 2) # Ajustar el límite superior
+  ) +
+  scale_fill_manual(
+    values = c("Teorico" = "#0072B2", "Real" = "#D55E00"), # Colores amigables
+    labels = c("Teorico" = "Teórico", "Real" = "Real")
+  ) +
+  labs(
+    title = "Gráfico de Avance de Obra Mensual",
+    x = "Mes",
+    fill = "Tipo de Avance"
+  ) +
+  
+  # Tema (Apariencia)
+  theme_minimal() +
+  theme(
+    plot.title = element_text(hjust = 0.5, face = "bold"),
+    legend.position = "bottom"
+  )
+
+# Mostrar el gráfico
+grafico_avance
+```
+
+
+
+
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### Zona del primer indicador
+
+```{r}
+```
+plot(cars;main="consumo de aridos", xlab"semana", ylab"m3")
+
+
+
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### Zona de trabajo 2
+
+```{r}
+
+```
+
+### Zona de trabajo 3
+
+```{r}
+# Cargar el paquete plotly
+library(plotly)
+
+# 1. Crear el data frame con los costos
+costos <- data.frame(
+  Variable = c("Materiales", "Mano de Obra", "Combustibles", "Maquinaria", "Mantenimiento"),
+  Costo = c(500, 250, 100, 300, 150)
+)
+
+# 2. Crear el gráfico de pastel interactivo con plotly
+fig <- plot_ly(costos, 
+               labels = ~Variable, 
+               values = ~Costo, 
+               type = 'pie',
+               # Personalizar el texto al pasar el mouse (tooltip)
+               textinfo = 'label+percent',
+               # Mostrar el porcentaje y la etiqueta
+               insidetextfont = list(color = '#FFFFFF'), # Color del texto dentro
+               hoverinfo = 'text',
+               text = ~paste(Variable, '<br>Costo: $', Costo)) %>% 
+  layout(title = 'Distribución de Costos Semanales de la Obra',
+         xaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE),
+         yaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE))
+
+# 3. Mostrar el gráfico
+fig
+```
+
+
+seguridad
+=======
+Column {data-width=300}
+---------------------------------------------------------------------
+
+### Zona del cuarto indicador
+
+
+```{r}
+valueBox(230, caption = "dias sin accidentes", icon = "fa-person-falling-burst")
+```
+
+Column {data-width=700}
+-----------------------------------------------------------------------
+
+### Zona de trabajo 2
+
+```{r}
+
+```
+
+### Zona de trabajo 3
+
+```{r}
+
+```
+
+
+
+Personal en obra
+=======
+
+
+### habilitaciones municipales
+En esta seccion presentamos el listado de personal en obra y tareas en ejecucion
+```{r}
+
+```
+
+Column {data-width=700}
+-----------------------------------------------------------------------
+
+### Gente por empresa
+
+|EMPRESA|TAREA|
+|-------|-----|
+|CIMADERA|TIRANTES DE TECHO|
+|HIDROBOMBAS|SANITARIOS|
+
+
+
+```{r}
+
+```
+
+### Subcontratistas
+
+```{r}
+
+```
