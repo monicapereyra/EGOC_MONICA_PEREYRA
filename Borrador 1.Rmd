@@ -10,9 +10,7 @@ output:
 library(flexdashboard)
 ```
 
-Avances
-===================================== 
-
+# Avances
 
 ```{r}
 # Cargar la librería ggplot2
@@ -87,23 +85,16 @@ grafico_avance <- ggplot(datos_largo, aes(x = Mes, y = Porcentaje, fill = Tipo_A
 grafico_avance
 ```
 
-
-
-
-
-Column {data-width=650}
------------------------------------------------------------------------
+## Column {data-width="650"}
 
 ### Zona del primer indicador
 
 ```{r}
 ```
+
 plot(cars;main="consumo de aridos", xlab"semana", ylab"m3")
 
-
-
-Column {data-width=350}
------------------------------------------------------------------------
+## Column {data-width="350"}
 
 ### Zona de trabajo 2
 
@@ -142,23 +133,23 @@ fig <- plot_ly(costos,
 fig
 ```
 
+# seguridad
 
-seguridad
-=======
-Column {data-width=300}
----------------------------------------------------------------------
+## Column {data-width="300"}
 
 ### Zona del cuarto indicador
-
 
 ```{r}
 valueBox(230, caption = "dias sin accidentes", icon = "fa-person-falling-burst")
 ```
 
-Column {data-width=700}
------------------------------------------------------------------------
+## Column {data-width="700"}
 
 ### Zona de trabajo 2
+
+![Octubre 2025](fotografia-profesional-avance-de-obras-de-construccion-medellin.webp)
+
+Avance de obra octubre
 
 ```{r}
 
@@ -170,29 +161,24 @@ Column {data-width=700}
 
 ```
 
-
-
-Personal en obra
-=======
-
+# Personal en obra
 
 ### habilitaciones municipales
+
 En esta seccion presentamos el listado de personal en obra y tareas en ejecucion
+
 ```{r}
 
 ```
 
-Column {data-width=700}
------------------------------------------------------------------------
+## Column {data-width="700"}
 
 ### Gente por empresa
 
-|EMPRESA|TAREA|
-|-------|-----|
-|CIMADERA|TIRANTES DE TECHO|
-|HIDROBOMBAS|SANITARIOS|
-
-
+| EMPRESA     | TAREA             |
+|-------------|-------------------|
+| CIMADERA    | TIRANTES DE TECHO |
+| HIDROBOMBAS | SANITARIOS        |
 
 ```{r}
 
