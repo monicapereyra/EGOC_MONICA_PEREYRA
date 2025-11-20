@@ -11,7 +11,7 @@ output:
 library(flexdashboard)
 ```
 
-# Avances
+# **Avances**
 
 ```{r}
 ```
@@ -88,7 +88,7 @@ ggplot(datos_tareas, aes(x = Tarea, y = Avance_Porcentaje)) +
 
 ## Column {data-width="500"}
 
-### 
+### **Avance real vs Avance teorico**
 
 ```{r}
 # Paso 1: Convertir la tasa (0-1) a porcentaje (0-100)
@@ -124,7 +124,7 @@ gauge(rate_percentage,
 )
 ```
 
-### Avance de obra Noviembre
+### **Avance de obra Noviembre**
 
 ![Noviembre 2025](estado real obra.jpg) {width=50%}
 
@@ -134,7 +134,7 @@ gauge(rate_percentage,
 
 ```
 
-# Datos
+# **Datos**
 
 
 Column
@@ -241,7 +241,7 @@ valueBox(
 Column
 -------
 
-### Visualizacion del proyecto {data-width="800"}
+### **Visualizacion del proyecto** {data-width="800"}
 
 
 <p align="center">
@@ -281,7 +281,7 @@ fig <- plot_ly(costos,
 fig
 ```
 
-# Personal en obra
+# **Personal en obra**
 
 Personas trabajando actualmente en obra - MES DE NOVIEMBRE
 
@@ -297,7 +297,7 @@ En esta secciÃ³n presentamos el listado de personal en obra y tareas en ejecuciÃ
 
 ## Column {data-width="400"}
 
-### Gente por empresa
+### **Gente por empresa**
 
 ```{r}
 
@@ -316,7 +316,7 @@ En esta secciÃ³n presentamos el listado de personal en obra y tareas en ejecuciÃ
 
 ## Column {data-width="400"}
 
-### Subcontratistas
+### **Subcontratistas**
 
 ```{r}
 
