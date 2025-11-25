@@ -2,7 +2,7 @@
 title: "Obra Colegio Santa Maria"
 output: 
   flexdashboard::flex_dashboard:
-    theme: cosmo
+    theme: flatly
     orientation: columns
     vertical_layout: fill
 ---
