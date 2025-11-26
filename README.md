@@ -7,4 +7,4 @@ Cuadro de mando de obra Santa Maria
 <https://github.com/ricardorpalma/Esp_Obras_2025>
 
 
-
+**26/11/0225 Se subio el archivo definitivo de Evaluacion de Gestiometria**
